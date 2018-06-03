@@ -22,7 +22,7 @@ pod 'constrain'
 
 ## Author
 
-anconaesselmann, axel@vida.com
+anconaesselmann, axel@anconaesselmann.com
 
 ## License
 
