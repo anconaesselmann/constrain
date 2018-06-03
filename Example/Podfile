@@ -1,0 +1,6 @@
+use_frameworks!
+target 'constrain_Tests' do
+  pod 'constrain', :path => '../'
+  
+  
+end
