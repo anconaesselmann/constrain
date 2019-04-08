@@ -342,13 +342,13 @@ extension UIView {
 
 public extension UIViewController {
     @discardableResult
-    public func constrainSubview(_ viewController: UIViewController) -> Constraints {
+    func constrainSubview(_ viewController: UIViewController) -> Constraints {
         view.addSubview(viewController.view)
         return viewController.view.constrain
     }
 
     @discardableResult
-    public func constrainSubview(_ subview: UIView) -> Constraints {
+    func constrainSubview(_ subview: UIView) -> Constraints {
         view.addSubview(subview)
         return subview.constrain
     }
