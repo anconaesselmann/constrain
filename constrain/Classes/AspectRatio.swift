@@ -7,13 +7,13 @@
 
 import UIKit
 
-extension Constraints {
+public extension Constraints {
     
     /// Apply an aspect ratio constraint to a view
     /// Ratio is expressed as width/height
     /// Checks that ratio is finite before applying (ag divide by zero errors)
     @discardableResult
-    public func aspectRatio(_ ratio: CGFloat, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func aspectRatio(_ ratio: CGFloat, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
@@ -35,9 +35,9 @@ public extension UIImage {
     }
 }
 
-extension UIImageView {
+public extension UIImageView {
     @discardableResult
-    public func constrainAspectToImage() -> Constraints {
+    func constrainAspectToImage() -> Constraints {
         guard let imageAspect = image?.aspectRatio else {
             print("Image is not set.")
             return constrain

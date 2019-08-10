@@ -7,11 +7,11 @@
 
 import UIKit
 
-extension Constraints {
+public extension Constraints {
     
     /// Constrain the view to a layout anchor or to the top of the superview when no anchor is provided.
     @discardableResult
-    public func top(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func top(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.topAnchor
@@ -24,7 +24,7 @@ extension Constraints {
     
     /// Constrain the view to a layout anchor or to the bottom of the superview when no anchor is provided.
     @discardableResult
-    public func bottom(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func bottom(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.bottomAnchor
@@ -37,7 +37,7 @@ extension Constraints {
     
     /// Constrain the view to a layout anchor or to the leading edge of the superview when no anchor is provided.
     @discardableResult
-    public func leading(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func leading(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.leadingAnchor
@@ -50,7 +50,7 @@ extension Constraints {
     
     /// Constrain the view to a layout anchor or to the trailing edge of the superview when no anchor is provided.
     @discardableResult
-    public func trailing(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func trailing(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.trailingAnchor
@@ -63,7 +63,7 @@ extension Constraints {
     
     /// Constrain the view to a layout anchor or to the horizontal center point of the superview when no anchor is provided.
     @discardableResult
-    public func centerX(equalTo anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func centerX(equalTo anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.centerXAnchor
@@ -76,7 +76,7 @@ extension Constraints {
     
     /// Constrain the view to a layout anchor or to the vertical center point of the superview when no anchor is provided.
     @discardableResult
-    public func centerY(equalTo anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func centerY(equalTo anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.centerYAnchor
@@ -90,11 +90,11 @@ extension Constraints {
 
 
 // Safety
-extension Constraints {
+public extension Constraints {
     
     /// Constrain the view to the top safe area of the superview.
     @discardableResult
-    public func topSafe(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func topSafe(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view,
             let anchor = view.superview?.topAnchorSafe
             else {
@@ -106,7 +106,7 @@ extension Constraints {
     
     /// Constrain the view to the bottom safe area of the superview.
     @discardableResult
-    public func bottomSafe(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func bottomSafe(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view,
             let anchor = view.superview?.bottomAnchorSafe
             else {
@@ -119,10 +119,10 @@ extension Constraints {
 }
 
 // Height and width stuff
-extension Constraints {
+public extension Constraints {
     /// Apply the height constraint of a view
     @discardableResult
-    public func height(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func height(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
@@ -132,7 +132,7 @@ extension Constraints {
     
     /// Constrains the height of one view to the height of another
     @discardableResult
-    public func height(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func height(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
@@ -142,7 +142,7 @@ extension Constraints {
     
     /// Apply the width constraint of a view
     @discardableResult
-    public func width(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func width(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
@@ -152,7 +152,7 @@ extension Constraints {
     
     /// Constrains the width of one view to the width of another
     @discardableResult
-    public func width(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func width(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
@@ -163,11 +163,11 @@ extension Constraints {
 }
 
 // C-c-c-c-combos
-extension Constraints {
+public extension Constraints {
     
     /// Constrain the view to the center of a view or to that of the superview when no view is provided.
     @discardableResult
-    public func center(of view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
+    func center(of view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
         guard let viewToFill = view ?? self.view?.superview else {
             print("Attempting to center view without reference view or superview.")
             return self
@@ -179,7 +179,7 @@ extension Constraints {
     
     /// Fills the width of the superview or that of the passed in view.
     @discardableResult
-    public func fillWidth(of view: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal) -> Constraints {
+    func fillWidth(of view: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal) -> Constraints {
         guard let viewToFill = view ?? self.view?.superview else {
             print("Attempting to fill width without reference view or superview.")
             return self
@@ -191,7 +191,7 @@ extension Constraints {
     
     /// Fills the height of the superview or that of the passed in view.
     @discardableResult
-    public func fillHeight(of view: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal) -> Constraints {
+    func fillHeight(of view: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal) -> Constraints {
         guard let viewToFill = view ?? self.view?.superview else {
             print("Attempting to fill height without reference view or superview.")
             return self
@@ -203,7 +203,7 @@ extension Constraints {
     
     /// Fills the both the height and width of the superview or that of the passed in view.
     @discardableResult
-    public func fill(_ view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
+    func fill(_ view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
         return self
             .fillWidth(of: view, constant: constant)
             .fillHeight(of: view, constant: constant)
@@ -211,7 +211,7 @@ extension Constraints {
     
     /// Apply the both the height and width constraints of a view
     @discardableResult
-    public func size(width: CGFloat, height: CGFloat, by relationship: Relationship = .equal) -> Constraints {
+    func size(width: CGFloat, height: CGFloat, by relationship: Relationship = .equal) -> Constraints {
         return self
             .width(width, by: relationship)
             .height(height, by: relationship)
@@ -220,7 +220,7 @@ extension Constraints {
     /// iOS 11 introduced safe area layout constraints.
     /// When filling the native UIViewController view, consider a method that aligns to the safe area.
     @discardableResult
-    public func fillHeightSafely(of view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
+    func fillHeightSafely(of view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
         guard let viewToFill = view ?? self.view?.superview else {
             print("Attempting to fill height without reference view or superview.")
             return self
@@ -233,7 +233,7 @@ extension Constraints {
     /// iOS 11 introduced safe area layout constraints.
     /// When filling the native UIViewController view, consider a method that aligns to the safe area.
     @discardableResult
-    public func fillSafely(_ view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
+    func fillSafely(_ view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
         return self
             .fillWidth(of: view, constant: constant)
             .fillHeightSafely(of: view, constant: constant)
