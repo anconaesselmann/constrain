@@ -90,7 +90,7 @@ public class Constraints {
         return self
     }
     
-    internal func applyDimensionMultiplierConstraint(
+    internal func applyDimensionMultiplier(
         dimension1: NSLayoutDimension,
         dimension2: NSLayoutDimension,
         identifier: ConstraintIdentifier,

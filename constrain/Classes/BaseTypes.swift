@@ -89,6 +89,7 @@ extension Constraints {
 }
 
 
+// Safety
 extension Constraints {
     
     /// Constrain the view to the top safe area of the superview.
@@ -139,6 +140,7 @@ extension Constraints {
     
 }
 
+// Height and width stuff
 extension Constraints {
     /// Apply the height constraint of a view
     @discardableResult
@@ -192,21 +194,12 @@ extension Constraints {
             print("Attempting to set aspect ratio to non-finite value.")
             return self
         }
-        return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: view.heightAnchor, identifier: ConstraintIdentifier.aspectRatio, constant: 0, relationship: relationship, priority: priority)
-        
-        let constraint: NSLayoutConstraint
-        switch relationship {
-        case .equal: constraint = view.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: ratio)
-        case .lessThanOrEqual: constraint = view.widthAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: ratio)
-        case .greaterThanOrEqual: constraint = view.widthAnchor.constraint(greaterThanOrEqualTo: view.heightAnchor, multiplier: ratio)
-        }
-        constraint.priority = priority
-        finalizeConstraint(constraint, ConstraintIdentifier.aspectRatio)
-        return self
+        return applyDimensionMultiplier(dimension1: view.widthAnchor, dimension2: view.heightAnchor, identifier: ConstraintIdentifier.aspectRatio, constant: 0, multiplier: ratio, relationship: relationship, priority: priority)
     }
     
 }
 
+// C-c-c-c-combos
 extension Constraints {
     
     /// Constrain the view to the center of a view or to that of the superview when no view is provided.
