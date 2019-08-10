@@ -121,7 +121,7 @@ extension Constraints {
     @discardableResult
     public func fillHeightSafely(of view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
         guard let viewToFill = view ?? self.view?.superview else {
-            print("No view provided for creating fill constraints")
+            print("Attempting to fill height without reference view or superview.")
             return self
         }
         return self
@@ -146,7 +146,7 @@ extension Constraints {
     @discardableResult
     public func height(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
-            print("Attempting to create height constraint without a view.")
+            print("View fell out of memory.")
             return self
         }
         return applyDimensionConstraint(dimension: view.heightAnchor, identifier: .height, constant: constant, relationship: relationship, priority: priority)
@@ -156,7 +156,7 @@ extension Constraints {
     @discardableResult
     public func height(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
-            print("Attempting to create height constraint without a view.")
+            print("View fell out of memory.")
             return self
         }
         return applyAnchorConstraint(anchor1: view.heightAnchor, anchor2: anchor, identifier: .height, constant: constant, relationship: relationship, priority: priority)
@@ -166,7 +166,7 @@ extension Constraints {
     @discardableResult
     public func width(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
-            print("Attempting to create width constraint without a view.")
+            print("View fell out of memory.")
             return self
         }
         return applyDimensionConstraint(dimension: view.widthAnchor, identifier: .width, constant: constant, relationship: relationship, priority: priority)
@@ -176,7 +176,7 @@ extension Constraints {
     @discardableResult
     public func width(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
-            print("Attempting to create width constraint without a view.")
+            print("View fell out of memory.")
             return self
         }
         return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: anchor, identifier: .width, constant: constant, relationship: relationship, priority: priority)
@@ -187,7 +187,7 @@ extension Constraints {
     @discardableResult
     public func aspectRatio(_ ratio: CGFloat, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
-            print("Attempting to make aspect ratio constraint without a view.")
+            print("View fell out of memory.")
             return self
         }
         guard ratio.isFinite else {
@@ -218,7 +218,7 @@ extension Constraints {
     @discardableResult
     public func fillWidth(of view: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal) -> Constraints {
         guard let viewToFill = view ?? self.view?.superview else {
-            print("No view provided for creating fill constraints")
+            print("Attempting to fill width without reference view or superview.")
             return self
         }
         return self
@@ -230,7 +230,7 @@ extension Constraints {
     @discardableResult
     public func fillHeight(of view: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal) -> Constraints {
         guard let viewToFill = view ?? self.view?.superview else {
-            print("No view provided for creating fill constraints")
+            print("Attempting to fill height without reference view or superview.")
             return self
         }
         return self
