@@ -18,11 +18,7 @@ public enum ConstraintIdentifier: String {
     case aspectRatio = ".aspectRatio"
 }
 
-public enum Relationship {
-    case equal
-    case lessThanOrEqual
-    case greaterThanOrEqual
-}
+public typealias Relationship = NSLayoutConstraint.Relation
 
 public typealias ConstraintSet = [NSLayoutConstraint]
 
@@ -63,9 +59,9 @@ public class Constraints {
                                            priority: UILayoutPriority) -> Constraints {
         let constraint: NSLayoutConstraint
         switch relationship {
-        case .equal: constraint = anchor1.constraint(equalTo: anchor2, constant: constant)
         case .lessThanOrEqual: constraint = anchor1.constraint(lessThanOrEqualTo: anchor2, constant: constant)
         case .greaterThanOrEqual: constraint = anchor1.constraint(greaterThanOrEqualTo: anchor2, constant: constant)
+        default: constraint = anchor1.constraint(equalTo: anchor2, constant: constant)
         }
         constraint.priority = priority
         finalizeConstraint(constraint, identifier)
@@ -81,9 +77,9 @@ public class Constraints {
     ) -> Constraints {
         let constraint: NSLayoutConstraint
         switch relationship {
-        case .equal: constraint = dimension.constraint(equalToConstant: constant)
         case .lessThanOrEqual: constraint = dimension.constraint(lessThanOrEqualToConstant: constant)
         case .greaterThanOrEqual: constraint = dimension.constraint(greaterThanOrEqualToConstant: constant)
+        default: constraint = dimension.constraint(equalToConstant: constant)
         }
         constraint.priority = priority
         finalizeConstraint(constraint, identifier)
@@ -101,9 +97,9 @@ public class Constraints {
     ) -> Constraints {
         let constraint: NSLayoutConstraint
         switch relationship {
-        case .equal: constraint = dimension1.constraint(equalToConstant: constant)
         case .lessThanOrEqual: constraint = dimension1.constraint(lessThanOrEqualToConstant: constant)
         case .greaterThanOrEqual: constraint = dimension1.constraint(greaterThanOrEqualToConstant: constant)
+        default: constraint = dimension1.constraint(equalToConstant: constant)
         }
         // for some reason anchor constraint initializers can either take multiplier or constant but not both
         // multiplier is immutable, so I'm just setting constant after initializing
