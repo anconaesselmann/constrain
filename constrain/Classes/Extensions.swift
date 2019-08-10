@@ -13,6 +13,10 @@ extension UIView {
     public var constrain: Constraints {
         return Constraints(view: self)
     }
+    
+    public func constrain(withName name: String) -> Constraints {
+        return Constraints(view: self, name: name)
+    }
 }
 
 public extension UIViewController {

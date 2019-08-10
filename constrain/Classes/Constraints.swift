@@ -5,17 +5,17 @@
 import UIKit
 
 public enum ConstraintIdentifier: String {
-    case top = "ConstraintIdentifier.top"
-    case leading = "ConstraintIdentifier.leading"
-    case trailing = "ConstraintIdentifier.trailing"
-    case bottom = "ConstraintIdentifier.bottom"
-    case topSafe = "ConstraintIdentifier.topSafe"
-    case bottomSafe = "ConstraintIdentifier.bottomSafe"
-    case height = "ConstraintIdentifier.height"
-    case width = "ConstraintIdentifier.width"
-    case centerX = "ConstraintIdentifier.centerX"
-    case centerY = "ConstraintIdentifier.centerY"
-    case aspectRatio = "ConstraintIdentifier.aspectRatio"
+    case top = ".top"
+    case leading = ".leading"
+    case trailing = ".trailing"
+    case bottom = ".bottom"
+    case topSafe = ".topSafe"
+    case bottomSafe = ".bottomSafe"
+    case height = ".height"
+    case width = ".width"
+    case centerX = ".centerX"
+    case centerY = ".centerY"
+    case aspectRatio = ".aspectRatio"
 }
 
 public enum Relationship {
@@ -34,13 +34,15 @@ public typealias ConstraintSet = [NSLayoutConstraint]
 public class Constraints {
 
     internal weak var view: UIView?
+    internal var viewName: String
     private var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
     
     public var latestConstraint: NSLayoutConstraint?
     public var latestConstraints: ConstraintSet?
 
-    internal init(view: UIView) {
+    internal init(view: UIView, name: String? = nil) {
         self.view = view
+        self.viewName = name ?? String.init(describing: view.self)
     }
 
     /// When storing a reference to a Constraints instance this method allows to retrieve a respective constraint.
@@ -115,7 +117,7 @@ public class Constraints {
         view?.translatesAutoresizingMaskIntoConstraints = false
         constraint.isActive = true
         let identifier = ConstraintIdentifier.aspectRatio
-        constraint.identifier = identifier.rawValue
+        constraint.identifier = viewName + identifier.rawValue
         constraints[identifier] = constraint // TODO: deactivate any existing before overwriting, or allow more than one of same identifier
         latestConstraint = constraint
     }
