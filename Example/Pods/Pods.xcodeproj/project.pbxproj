@@ -13,6 +13,7 @@
 		E39738C2265E3D75F9501FAAA39F01D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		EC9A41D267AF41659B9B479BCD5251BD /* Pods-constrain_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9E020373A8E6E43DF1FA66D0665B946 /* Pods-constrain_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE773B0E636C470532E22CFF66B18C17 /* constrain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2CAA8F6408A0B731D243A9FCBA20 /* constrain-dummy.m */; };
+		F6DB0D8A22FF18BE00E4A5DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */; };
 		FB2901D2F30755DA456CDE878B04077E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B74E8C41327A90D6C611832904517 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,22 +35,23 @@
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		32B0D29B251D6A2A046FB5369E45B862 /* Pods-constrain_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-constrain_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		35BC50A3EA8B30992BDF7DB6F68B1907 /* Pods-constrain_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-constrain_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		3E181A2F410937388567AA33985EA972 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3E181A2F410937388567AA33985EA972 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5254493EF47F0F2796E4B8DD75329BAC /* constrain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = constrain.modulemap; sourceTree = "<group>"; };
-		76A054442E6D77412B1D804F98A56488 /* constrain.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = constrain.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		76A054442E6D77412B1D804F98A56488 /* constrain.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = constrain.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		794B74E8C41327A90D6C611832904517 /* Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = constrain/Classes/Constraints.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A9E020373A8E6E43DF1FA66D0665B946 /* Pods-constrain_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-constrain_Tests-umbrella.h"; sourceTree = "<group>"; };
 		AE1B2CAA8F6408A0B731D243A9FCBA20 /* constrain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "constrain-dummy.m"; sourceTree = "<group>"; };
-		B892746D92F5113EBCCE505BAEDDB142 /* constrain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = constrain.framework; path = constrain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B892746D92F5113EBCCE505BAEDDB142 /* constrain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = constrain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD277FC53DCBB58383638AB75DFA5DC /* Pods-constrain_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-constrain_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BC1DF3B79F8C40B5A18C11DAC26D760C /* Pods-constrain_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-constrain_Tests-Info.plist"; sourceTree = "<group>"; };
-		CB179EC58C9E158C17C06B4FF82A147D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		CB179EC58C9E158C17C06B4FF82A147D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D65E3F239E7DB2EF4C39FAB6F1C1751F /* constrain-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "constrain-Info.plist"; sourceTree = "<group>"; };
 		E1CE2778A4C0D42ADE2C83710ACA84EC /* Pods-constrain_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-constrain_Tests.modulemap"; sourceTree = "<group>"; };
-		E63FBD113D3C42ECE976683895086090 /* Pods_constrain_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_constrain_Tests.framework; path = "Pods-constrain_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63FBD113D3C42ECE976683895086090 /* Pods_constrain_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_constrain_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BE0B8795D0199345AB8056A3BDFA0F /* Pods-constrain_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-constrain_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F3F0F78EFFBDEA38339493C1A1F23150 /* constrain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "constrain-umbrella.h"; sourceTree = "<group>"; };
+		F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = constrain/Classes/Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				794B74E8C41327A90D6C611832904517 /* Constraints.swift */,
+				F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */,
 				F4126D4621FA1E67AAF78B7AADB9C038 /* Pod */,
 				85CA470EC9358AAAECBE3E60AAE2991F /* Support Files */,
 			);
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE773B0E636C470532E22CFF66B18C17 /* constrain-dummy.m in Sources */,
+				F6DB0D8A22FF18BE00E4A5DA /* Extensions.swift in Sources */,
 				FB2901D2F30755DA456CDE878B04077E /* Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,8 +532,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
