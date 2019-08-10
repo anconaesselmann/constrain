@@ -14,6 +14,7 @@
 		EC9A41D267AF41659B9B479BCD5251BD /* Pods-constrain_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9E020373A8E6E43DF1FA66D0665B946 /* Pods-constrain_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE773B0E636C470532E22CFF66B18C17 /* constrain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1B2CAA8F6408A0B731D243A9FCBA20 /* constrain-dummy.m */; };
 		F6DB0D8A22FF18BE00E4A5DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */; };
+		F6DB0D8C22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB0D8B22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift */; };
 		FB2901D2F30755DA456CDE878B04077E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B74E8C41327A90D6C611832904517 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		E9BE0B8795D0199345AB8056A3BDFA0F /* Pods-constrain_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-constrain_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F3F0F78EFFBDEA38339493C1A1F23150 /* constrain-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "constrain-umbrella.h"; sourceTree = "<group>"; };
 		F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = constrain/Classes/Extensions.swift; sourceTree = "<group>"; };
+		F6DB0D8B22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImplicitSuperviewShortcuts.swift; path = constrain/Classes/ImplicitSuperviewShortcuts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				794B74E8C41327A90D6C611832904517 /* Constraints.swift */,
+				F6DB0D8B22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift */,
 				F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */,
 				F4126D4621FA1E67AAF78B7AADB9C038 /* Pod */,
 				85CA470EC9358AAAECBE3E60AAE2991F /* Support Files */,
@@ -289,6 +292,7 @@
 			files = (
 				EE773B0E636C470532E22CFF66B18C17 /* constrain-dummy.m in Sources */,
 				F6DB0D8A22FF18BE00E4A5DA /* Extensions.swift in Sources */,
+				F6DB0D8C22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift in Sources */,
 				FB2901D2F30755DA456CDE878B04077E /* Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

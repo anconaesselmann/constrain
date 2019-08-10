@@ -44,12 +44,6 @@ public class Constraints {
 
     /// Constrain the view to a layout anchor or to the top of the superview when no anchor is provided.
     @discardableResult
-    public func top(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        return top(to: nil, constant: constant, by: relationship, priority: priority)
-    }
-
-    /// Constrain the view to a layout anchor or to the top of the superview when no anchor is provided.
-    @discardableResult
     public func top(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard
             let view = view,
@@ -71,12 +65,6 @@ public class Constraints {
             return self
         }
         return applyAnchorConstraint(anchor1: view.topAnchor, anchor2: anchor, identifier: .top, constant: constant, relationship: relationship, priority: priority)
-    }
-
-    /// Constrain the view to a layout anchor or to the bottom of the superview when no anchor is provided.
-    @discardableResult
-    public func bottom(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        return bottom(to: nil, constant: constant, by: relationship, priority: priority)
     }
 
     /// Constrain the view to a layout anchor or to the bottom of the superview when no anchor is provided.
@@ -117,12 +105,6 @@ public class Constraints {
         return applyAnchorConstraint(anchor1: view.leadingAnchor, anchor2: anchor, identifier: .leading, constant: constant, relationship: relationship, priority: priority)
     }
 
-    /// Constrain the view to the leading edge of the superview.
-    @discardableResult
-    public func leading(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        return leading(to: nil, constant: constant, by: relationship, priority: priority)
-    }
-
     /// Constrain the view to a layout anchor or to the trailing edge of the superview when no anchor is provided.
     @discardableResult
     public func trailing(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
@@ -134,12 +116,6 @@ public class Constraints {
             return self
         }
         return applyAnchorConstraint(anchor1: view.trailingAnchor, anchor2: anchor, identifier: .trailing, constant: -constant, relationship: relationship, priority: priority)
-    }
-
-    /// Constrain the view to the trailing edge of the superview.
-    @discardableResult
-    public func trailing(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        return trailing(to: nil, constant: constant, by: relationship, priority: priority)
     }
 
     /// Constrain the view to a layout anchor or to the horizontal center point of the superview when no anchor is provided.
@@ -282,12 +258,6 @@ public class Constraints {
             .trailing(to: viewToFill.trailingAnchor, constant: constant, by: relationship)
     }
 
-    /// Fills the width of the superview.
-    @discardableResult
-    public func fillWidth(_ constant: CGFloat = 0.0) -> Constraints {
-        return fillWidth(of: nil, constant: constant)
-    }
-
     /// Fills the height of the superview or that of the passed in view.
     @discardableResult
     public func fillHeight(of view: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal) -> Constraints {
@@ -298,12 +268,6 @@ public class Constraints {
         return self
             .top(to: viewToFill.topAnchor, constant: constant, by: relationship)
             .bottom(to: viewToFill.bottomAnchor, constant: constant, by: relationship)
-    }
-
-    /// Fills the height of the superview.
-    @discardableResult
-    public func fillHeight(_ constant: CGFloat = 0.0) -> Constraints {
-        return fillHeight(of: nil, constant: constant)
     }
 
     /// iOS 11 introduced safe area layout constraints.
