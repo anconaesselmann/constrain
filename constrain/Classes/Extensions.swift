@@ -11,7 +11,7 @@ extension UIView {
     /// Returns a Constraint instance which eases creation of NSLayoutConstraints.
     /// Save a reference to the Constraint instance for later access to the layout constraints.
     public var constrain: Constraints {
-        return Constraints(view: self, constraints: [])
+        return Constraints(view: self)
     }
 }
 

@@ -38,7 +38,7 @@ public class Constraints {
     public var latestConstraint: NSLayoutConstraint?
     public var latestConstraints: ConstraintSet?
 
-    internal init(view: UIView, constraints: [NSLayoutConstraint]) {
+    internal init(view: UIView) {
         self.view = view
     }
 
