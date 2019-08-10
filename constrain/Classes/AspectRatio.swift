@@ -12,6 +12,8 @@ public extension Constraints {
     /// Apply an aspect ratio constraint to a view
     /// Ratio is expressed as width/height
     /// Checks that ratio is finite before applying (ag divide by zero errors)
+    /// Multiplier is not editable, so you need to replace this constraint to change the ratio
+    /// TODO: helper function?
     @discardableResult
     func aspectRatio(_ ratio: CGFloat, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
