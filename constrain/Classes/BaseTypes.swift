@@ -68,7 +68,7 @@ public extension Constraints {
             let view = view,
             let anchor = anchor ?? view.superview?.centerXAnchor
             else {
-                print("Attempting to create horizontal center constraint without a reference anchor.")
+                print("Attempting to create centerX constraint without a reference anchor.")
                 return self
         }
         return applyAnchorConstraint(anchor1: view.centerXAnchor, anchor2: anchor, identifier: .centerX, constant: constant, relationship: relationship, priority: priority)
@@ -81,41 +81,11 @@ public extension Constraints {
             let view = view,
             let anchor = anchor ?? view.superview?.centerYAnchor
             else {
-                print("Attempting to create vertical ceenter constraint without a reference anchor.")
+                print("Attempting to create centerY constraint without a reference anchor.")
                 return self
         }
         return applyAnchorConstraint(anchor1: view.centerYAnchor, anchor2: anchor, identifier: .centerY, constant: constant, relationship: relationship, priority: priority)
     }
-}
-
-
-// Safety
-public extension Constraints {
-    
-    /// Constrain the view to the top safe area of the superview.
-    @discardableResult
-    func topSafe(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        guard let view = view,
-            let anchor = view.superview?.topAnchorSafe
-            else {
-                print("Attempting to create top constraint without a reference anchor.")
-                return self
-        }
-        return applyAnchorConstraint(anchor1: view.topAnchor, anchor2: anchor, identifier: .top, constant: constant, relationship: relationship, priority: priority)
-    }
-    
-    /// Constrain the view to the bottom safe area of the superview.
-    @discardableResult
-    func bottomSafe(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        guard let view = view,
-            let anchor = view.superview?.bottomAnchorSafe
-            else {
-                print("Attempting to create bottom constraint without a reference anchor.")
-                return self
-        }
-        return applyAnchorConstraint(anchor1: view.bottomAnchor, anchor2: anchor, identifier: .bottom, constant: -constant, relationship: relationship, priority: priority)
-    }
-    
 }
 
 // Height and width stuff
@@ -215,28 +185,6 @@ public extension Constraints {
         return self
             .width(width, by: relationship)
             .height(height, by: relationship)
-    }
-    
-    /// iOS 11 introduced safe area layout constraints.
-    /// When filling the native UIViewController view, consider a method that aligns to the safe area.
-    @discardableResult
-    func fillHeightSafely(of view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
-        guard let viewToFill = view ?? self.view?.superview else {
-            print("Attempting to fill height without reference view or superview.")
-            return self
-        }
-        return self
-            .top(to: viewToFill.topAnchorSafe, constant: constant)
-            .bottom(to: viewToFill.bottomAnchorSafe, constant: constant)
-    }
-    
-    /// iOS 11 introduced safe area layout constraints.
-    /// When filling the native UIViewController view, consider a method that aligns to the safe area.
-    @discardableResult
-    func fillSafely(_ view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
-        return self
-            .fillWidth(of: view, constant: constant)
-            .fillHeightSafely(of: view, constant: constant)
     }
     
 }

@@ -41,16 +41,22 @@ public class Constraints {
         self.viewName = name ?? String.init(describing: view.self)
     }
 
-    /// When storing a reference to a Constraints instance this method allows to retrieve a respective constraint.
-    public func layoutConstraintWithIdentifier(_ identifier: ConstraintIdentifier) -> NSLayoutConstraint? {
-        return constraints[identifier]
-    }
+}
 
-    /// When storing a reference to a Constraints instance this method allows to set the constant of a respective constraint.
-    public func setConstant(_ constant: CGFloat, forIdentifier identifier: ConstraintIdentifier) {
-        layoutConstraintWithIdentifier(identifier)?.constant = constant
+extension UIView {
+    /// Returns a Constraint instance which eases creation of NSLayoutConstraints.
+    /// Save a reference to the Constraint instance for later access to the layout constraints.
+    public var constrain: Constraints {
+        return Constraints(view: self)
     }
+    
+    public func constrain(withName name: String) -> Constraints {
+        return Constraints(view: self, name: name)
+    }
+}
 
+extension Constraints {
+    
     internal func applyAnchorConstraint<T>(anchor1: NSLayoutAnchor<T>,
                                            anchor2: NSLayoutAnchor<T>,
                                            identifier: ConstraintIdentifier,
@@ -116,6 +122,16 @@ public class Constraints {
         constraint.identifier = viewName + identifier.rawValue
         constraints[identifier] = constraint // TODO: deactivate any existing before overwriting, or allow more than one of same identifier
         latestConstraint = constraint
+    }
+    
+    /// When storing a reference to a Constraints instance this method allows to retrieve a respective constraint.
+    public func layoutConstraintWithIdentifier(_ identifier: ConstraintIdentifier) -> NSLayoutConstraint? {
+        return constraints[identifier]
+    }
+    
+    /// When storing a reference to a Constraints instance this method allows to set the constant of a respective constraint.
+    public func setConstant(_ constant: CGFloat, forIdentifier identifier: ConstraintIdentifier) {
+        layoutConstraintWithIdentifier(identifier)?.constant = constant
     }
 
 }
