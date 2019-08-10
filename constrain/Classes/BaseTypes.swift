@@ -116,28 +116,6 @@ extension Constraints {
         return applyAnchorConstraint(anchor1: view.bottomAnchor, anchor2: anchor, identifier: .bottom, constant: -constant, relationship: relationship, priority: priority)
     }
     
-    /// iOS 11 introduced safe area layout constraints.
-    /// When filling the native UIViewController view, consider a method that aligns to the safe area.
-    @discardableResult
-    public func fillHeightSafely(of view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
-        guard let viewToFill = view ?? self.view?.superview else {
-            print("Attempting to fill height without reference view or superview.")
-            return self
-        }
-        return self
-            .top(to: viewToFill.topAnchorSafe, constant: constant)
-            .bottom(to: viewToFill.bottomAnchorSafe, constant: constant)
-    }
-    
-    /// iOS 11 introduced safe area layout constraints.
-    /// When filling the native UIViewController view, consider a method that aligns to the safe area.
-    @discardableResult
-    public func fillSafely(_ view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
-        return self
-            .fillWidth(of: view, constant: constant)
-            .fillHeightSafely(of: view, constant: constant)
-    }
-    
 }
 
 // Height and width stuff
@@ -252,6 +230,28 @@ extension Constraints {
         return self
             .width(width, by: relationship)
             .height(height, by: relationship)
+    }
+    
+    /// iOS 11 introduced safe area layout constraints.
+    /// When filling the native UIViewController view, consider a method that aligns to the safe area.
+    @discardableResult
+    public func fillHeightSafely(of view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
+        guard let viewToFill = view ?? self.view?.superview else {
+            print("Attempting to fill height without reference view or superview.")
+            return self
+        }
+        return self
+            .top(to: viewToFill.topAnchorSafe, constant: constant)
+            .bottom(to: viewToFill.bottomAnchorSafe, constant: constant)
+    }
+    
+    /// iOS 11 introduced safe area layout constraints.
+    /// When filling the native UIViewController view, consider a method that aligns to the safe area.
+    @discardableResult
+    public func fillSafely(_ view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
+        return self
+            .fillWidth(of: view, constant: constant)
+            .fillHeightSafely(of: view, constant: constant)
     }
     
 }
