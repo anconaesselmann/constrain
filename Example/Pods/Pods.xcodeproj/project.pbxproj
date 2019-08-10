@@ -16,6 +16,7 @@
 		F6DB0D8A22FF18BE00E4A5DA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */; };
 		F6DB0D8C22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB0D8B22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift */; };
 		F6DB0D8E22FF1BC000E4A5DA /* BaseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB0D8D22FF1BC000E4A5DA /* BaseTypes.swift */; };
+		F6DB0D9022FF28FA00E4A5DA /* AspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB0D8F22FF28FA00E4A5DA /* AspectRatio.swift */; };
 		FB2901D2F30755DA456CDE878B04077E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B74E8C41327A90D6C611832904517 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = constrain/Classes/Extensions.swift; sourceTree = "<group>"; };
 		F6DB0D8B22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImplicitSuperviewShortcuts.swift; path = constrain/Classes/ImplicitSuperviewShortcuts.swift; sourceTree = "<group>"; };
 		F6DB0D8D22FF1BC000E4A5DA /* BaseTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseTypes.swift; path = constrain/Classes/BaseTypes.swift; sourceTree = "<group>"; };
+		F6DB0D8F22FF28FA00E4A5DA /* AspectRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AspectRatio.swift; path = constrain/Classes/AspectRatio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				794B74E8C41327A90D6C611832904517 /* Constraints.swift */,
+				F6DB0D8F22FF28FA00E4A5DA /* AspectRatio.swift */,
 				F6DB0D8D22FF1BC000E4A5DA /* BaseTypes.swift */,
 				F6DB0D8B22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift */,
 				F6DB0D8922FF18BE00E4A5DA /* Extensions.swift */,
@@ -298,6 +301,7 @@
 				F6DB0D8A22FF18BE00E4A5DA /* Extensions.swift in Sources */,
 				F6DB0D8C22FF1A3E00E4A5DA /* ImplicitSuperviewShortcuts.swift in Sources */,
 				FB2901D2F30755DA456CDE878B04077E /* Constraints.swift in Sources */,
+				F6DB0D9022FF28FA00E4A5DA /* AspectRatio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

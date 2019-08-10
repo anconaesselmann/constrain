@@ -160,21 +160,6 @@ extension Constraints {
         return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: anchor, identifier: .width, constant: constant, relationship: relationship, priority: priority)
     }
     
-    /// Apply an aspect ratio constraint to a view
-    /// Ratio is expressed as width/height
-    @discardableResult
-    public func aspectRatio(_ ratio: CGFloat, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        guard let view = view else {
-            print("View fell out of memory.")
-            return self
-        }
-        guard ratio.isFinite else {
-            print("Attempting to set aspect ratio to non-finite value.")
-            return self
-        }
-        return applyDimensionMultiplier(dimension1: view.widthAnchor, dimension2: view.heightAnchor, identifier: ConstraintIdentifier.aspectRatio, constant: 0, multiplier: ratio, relationship: relationship, priority: priority)
-    }
-    
 }
 
 // C-c-c-c-combos
