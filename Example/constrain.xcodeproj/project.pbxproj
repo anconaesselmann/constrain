@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3650C5D5AA56191F493F21BA /* constrain.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = constrain.podspec; path = ../constrain.podspec; sourceTree = "<group>"; };
+		3650C5D5AA56191F493F21BA /* constrain.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = constrain.podspec; path = ../constrain.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		36D7A925264F22D7E7E10C59 /* Pods-constrain_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-constrain_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-constrain_Tests/Pods-constrain_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* constrain_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = constrain_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +135,7 @@
 				TargetAttributes = {
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 9J44X82D53;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -145,6 +146,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -175,7 +177,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-constrain_Tests/Pods-constrain_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-constrain_Tests/Pods-constrain_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/constrain/constrain.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -184,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-constrain_Tests/Pods-constrain_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-constrain_Tests/Pods-constrain_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EDD7323E2F45ECC4134D5EC7 /* [CP] Check Pods Manifest.lock */ = {
@@ -265,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -311,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -323,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 36D7A925264F22D7E7E10C59 /* Pods-constrain_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9J44X82D53;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -344,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8C0928BB3D4D1D74631F060 /* Pods-constrain_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9J44X82D53;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
