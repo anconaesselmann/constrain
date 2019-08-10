@@ -47,3 +47,23 @@ extension Constraints {
         return fillHeight(constant: constant)
     }
 }
+
+extension Constraints {
+    /// Apply the both the height and width constraints of a view based on CGSize
+    @discardableResult
+    public func size(_ size: CGSize, by relationship: Relationship = .equal) -> Constraints {
+        return self.size(width: size.width, height: size.height, by: relationship)
+    }
+    
+    /// Create a height and width constraints for a square view
+    @discardableResult
+    public func size(_ size: CGFloat, by relationship: Relationship = .equal) -> Constraints {
+        return self.size(width: size, height: size, by: relationship)
+    }
+    
+    /// Constrain to square aspect
+    @discardableResult
+    public func square(by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+        return aspectRatio(1, by: relationship, priority: priority)
+    }
+}
