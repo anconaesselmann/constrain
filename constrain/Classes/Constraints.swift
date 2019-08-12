@@ -118,7 +118,6 @@ extension Constraints {
     fileprivate func finalizeConstraint(_ constraint: NSLayoutConstraint, _ identifier: ConstraintIdentifier) {
         view?.translatesAutoresizingMaskIntoConstraints = false
         constraint.isActive = true
-        let identifier = ConstraintIdentifier.aspectRatio
         constraint.identifier = viewName + identifier.rawValue
         constraints[identifier] = constraint // TODO: deactivate any existing before overwriting, or allow more than one of same identifier
         latestConstraint = constraint
