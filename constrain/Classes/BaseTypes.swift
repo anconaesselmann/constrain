@@ -187,4 +187,12 @@ public extension Constraints {
             .height(height, by: relationship)
     }
     
+    /// Constraint the height and width of one view to those of another
+    @discardableResult
+    func size(to view: UIView, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+        return self
+            .height(to: view.heightAnchor, by: relationship, priority: priority)
+            .width(to: view.widthAnchor, by: relationship, priority: priority)
+    }
+    
 }
