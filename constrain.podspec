@@ -29,7 +29,7 @@ Simplified syntax for layout constraints. Save and edit layout constraints.
   s.source           = { :git => 'https://github.com/anconaesselmann/constrain.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'constrain/Classes/**/*'
 
