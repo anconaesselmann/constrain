@@ -132,7 +132,7 @@ public extension Constraints {
     
 }
 
-// C-c-c-c-combos
+// Combos! Set more than one constraint at a time quickly.
 public extension Constraints {
     
     /// Constrain the view to the center of a view or to that of the superview when no view is provided.

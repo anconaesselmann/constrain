@@ -34,6 +34,8 @@ public class Constraints {
     private var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
     
     public var latestConstraint: NSLayoutConstraint?
+	// Not implemented yet
+	@available(*, unavailable)
     public var latestConstraints: ConstraintSet?
 
     internal init(view: UIView, name: String? = nil) {
