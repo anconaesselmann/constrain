@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'constrain'
-  s.version          = '0.2.2'
+  s.version          = '1.0.0'
   s.summary          = 'Constrain helps with creating layout constraints'
-  s.swift_version    = '4.0'
+  s.swift_version    = '5.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -29,7 +29,7 @@ Simplified syntax for layout constraints. Save and edit layout constraints.
   s.source           = { :git => 'https://github.com/anconaesselmann/constrain.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'constrain/Classes/**/*'
 
