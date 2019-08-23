@@ -13,15 +13,11 @@ public extension Constraints {
     /// Ratio is expressed as width/height
     /// Checks that ratio is finite before applying (avoid divide by zero errors)
     /// Multiplier is not editable, so you need to replace this constraint to change the ratio
-    /// TODO: helper function?
+    /// TODO: replacement helper function?
     @discardableResult
     func aspectRatio(_ ratio: CGFloat, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
-            return self
-        }
-        guard ratio.isFinite else {
-            print("Attempting to set aspect ratio to non-finite value.")
             return self
         }
         return applyDimensionMultiplier(dimension1: view.widthAnchor, dimension2: view.heightAnchor, identifier: ConstraintIdentifier.aspectRatio, constant: 0, multiplier: ratio, relationship: relationship, priority: priority)

@@ -28,21 +28,21 @@ public typealias ConstraintSet = [NSLayoutConstraint]
 /// Most methods allow the omission of an anchor or view to be passed in.
 /// The superview is used when no view is passed in and the superview's respective anchor is used when the anchor is omitted.
 public class Constraints {
-
+    
     internal weak var view: UIView?
     internal var viewName: String
     private var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
     
     public var latestConstraint: NSLayoutConstraint?
-	// Not implemented yet
-	@available(*, unavailable)
+    // Not implemented yet
+    @available(*, unavailable)
     public var latestConstraints: ConstraintSet?
-
+    
     internal init(view: UIView, name: String? = nil) {
         self.view = view
         self.viewName = name ?? String.init(describing: view.self)
     }
-
+    
 }
 
 public extension UIView {
@@ -59,12 +59,14 @@ public extension UIView {
 
 extension Constraints {
     
-    internal func applyAnchorConstraint<T>(anchor1: NSLayoutAnchor<T>,
-                                           anchor2: NSLayoutAnchor<T>,
-                                           identifier: ConstraintIdentifier,
-                                           constant: CGFloat,
-                                           relationship: Relationship = .equal,
-                                           priority: UILayoutPriority) -> Constraints {
+    internal func applyAnchorConstraint<T>(
+        anchor1: NSLayoutAnchor<T>,
+        anchor2: NSLayoutAnchor<T>,
+        identifier: ConstraintIdentifier,
+        constant: CGFloat,
+        relationship: Relationship = .equal,
+        priority: UILayoutPriority
+    ) -> Constraints {
         let constraint: NSLayoutConstraint
         switch relationship {
         case .lessThanOrEqual: constraint = anchor1.constraint(lessThanOrEqualTo: anchor2, constant: constant)
@@ -103,11 +105,15 @@ extension Constraints {
         relationship: Relationship = .equal,
         priority: UILayoutPriority
     ) -> Constraints {
+        guard multiplier.isFinite else {
+            print("Attempting to set a non-finite multiplier.")
+            return self
+        }
         let constraint: NSLayoutConstraint
         switch relationship {
-        case .lessThanOrEqual: constraint = dimension1.constraint(lessThanOrEqualToConstant: constant)
-        case .greaterThanOrEqual: constraint = dimension1.constraint(greaterThanOrEqualToConstant: constant)
-        default: constraint = dimension1.constraint(equalToConstant: constant)
+        case .lessThanOrEqual: constraint = dimension1.constraint(lessThanOrEqualTo: dimension2, multiplier: multiplier)
+        case .greaterThanOrEqual: constraint = dimension1.constraint(greaterThanOrEqualTo: dimension2, multiplier: multiplier)
+        default: constraint = dimension1.constraint(equalTo: dimension2, multiplier: multiplier)
         }
         // for some reason anchor constraint initializers can either take multiplier or constant but not both
         // multiplier is immutable, so I'm just setting constant after initializing
@@ -134,5 +140,5 @@ extension Constraints {
     public func setConstant(_ constant: CGFloat, forIdentifier identifier: ConstraintIdentifier) {
         layoutConstraintWithIdentifier(identifier)?.constant = constant
     }
-
+    
 }

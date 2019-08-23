@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'constrain'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Constrain helps with creating layout constraints'
   s.swift_version    = '5.0'
 
