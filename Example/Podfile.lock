@@ -1,5 +1,5 @@
 PODS:
-  - constrain (0.2.2)
+  - constrain (1.0.1)
 
 DEPENDENCIES:
   - constrain (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  constrain: 6a1ed7f60064d25368e6b6ff940b00633eca0221
+  constrain: 9bd077fbfd01277f850fb8188a2c3f92c1e98ee0
 
-PODFILE CHECKSUM: 14d7a31a7d61756831ce5797fa846294dc2150e1
+PODFILE CHECKSUM: be749513a1bcfdbab8795810b1bf5baf98aaa6f4
 
 COCOAPODS: 1.7.5
