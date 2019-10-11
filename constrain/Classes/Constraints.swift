@@ -167,6 +167,11 @@ extension Constraints {
         return constraints[identifier]
     }
     
+    /// Alias for layoutConstraintWithIdentifier
+    public subscript(_ identifier: ConstraintIdentifier) -> NSLayoutConstraint? {
+        return layoutConstraintWithIdentifier(identifier)
+    }
+    
     /// When storing a reference to a Constraints instance this method allows to set the constant of a respective constraint.
     public func setConstant(_ constant: CGFloat, forIdentifier identifier: ConstraintIdentifier) {
         layoutConstraintWithIdentifier(identifier)?.constant = constant
