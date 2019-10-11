@@ -4,18 +4,49 @@
 
 import UIKit
 
-public enum ConstraintIdentifier: String {
-    case top = ".top"
-    case leading = ".leading"
-    case trailing = ".trailing"
-    case bottom = ".bottom"
-    case topSafe = ".topSafe"
-    case bottomSafe = ".bottomSafe"
-    case height = ".height"
-    case width = ".width"
-    case centerX = ".centerX"
-    case centerY = ".centerY"
-    case aspectRatio = ".aspectRatio"
+public enum ConstraintIdentifier: Hashable {
+    
+    case top
+    case leading
+    case trailing
+    case bottom
+    case topSafe
+    case bottomSafe
+    case height
+    case width
+    case centerX
+    case centerY
+    case aspectRatio
+    case named(String)
+    
+    public var string: String {
+        switch self {
+        case .top:
+            return ".top"
+        case .leading:
+            return ".leading"
+        case .trailing:
+            return ".trailing"
+        case .bottom:
+            return ".bottom"
+        case .topSafe:
+            return ".topSafe"
+        case .bottomSafe:
+            return ".bottomSafe"
+        case .height:
+            return ".height"
+        case .width:
+            return ".width"
+        case .centerX:
+            return ".centerX"
+        case .centerY:
+            return ".centerY"
+        case .aspectRatio:
+            return ".aspectRatio"
+        case .named(let name):
+            return ".named(\(name))"
+        }
+    }
 }
 
 public typealias Relationship = NSLayoutConstraint.Relation
@@ -126,7 +157,7 @@ extension Constraints {
     fileprivate func finalizeConstraint(_ constraint: NSLayoutConstraint, _ identifier: ConstraintIdentifier) {
         view?.translatesAutoresizingMaskIntoConstraints = false
         constraint.isActive = true
-        constraint.identifier = viewName + identifier.rawValue
+        constraint.identifier = viewName + identifier.string
         constraints[identifier] = constraint // TODO: deactivate any existing before overwriting, or allow more than one of same identifier
         latestConstraint = constraint
     }

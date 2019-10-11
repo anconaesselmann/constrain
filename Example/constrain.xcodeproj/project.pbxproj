@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4114F07923513A1700DF955F /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07023513A1700DF955F /* Constraints.swift */; };
+		4114F07A23513A1700DF955F /* SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07123513A1700DF955F /* SafeArea.swift */; };
+		4114F07B23513A1700DF955F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4114F07223513A1700DF955F /* .gitkeep */; };
+		4114F07C23513A1700DF955F /* BaseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07323513A1700DF955F /* BaseTypes.swift */; };
+		4114F07D23513A1700DF955F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07423513A1700DF955F /* Extensions.swift */; };
+		4114F07E23513A1700DF955F /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07523513A1700DF955F /* Shortcuts.swift */; };
+		4114F07F23513A1700DF955F /* AspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07623513A1700DF955F /* AspectRatio.swift */; };
+		4114F08023513A1700DF955F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4114F07823513A1700DF955F /* .gitkeep */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6C21678CE21E1ABDE518C0DF /* Pods_constrain_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6BCFF3183F35474062F45F /* Pods_constrain_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -14,6 +22,14 @@
 /* Begin PBXFileReference section */
 		3650C5D5AA56191F493F21BA /* constrain.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = constrain.podspec; path = ../constrain.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		36D7A925264F22D7E7E10C59 /* Pods-constrain_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-constrain_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-constrain_Tests/Pods-constrain_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		4114F07023513A1700DF955F /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		4114F07123513A1700DF955F /* SafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArea.swift; sourceTree = "<group>"; };
+		4114F07223513A1700DF955F /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		4114F07323513A1700DF955F /* BaseTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTypes.swift; sourceTree = "<group>"; };
+		4114F07423513A1700DF955F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4114F07523513A1700DF955F /* Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shortcuts.swift; sourceTree = "<group>"; };
+		4114F07623513A1700DF955F /* AspectRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectRatio.swift; sourceTree = "<group>"; };
+		4114F07823513A1700DF955F /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* constrain_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = constrain_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -43,9 +59,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4114F06E23513A1700DF955F /* constrain */ = {
+			isa = PBXGroup;
+			children = (
+				4114F06F23513A1700DF955F /* Classes */,
+				4114F07723513A1700DF955F /* Assets */,
+			);
+			name = constrain;
+			path = ../constrain;
+			sourceTree = "<group>";
+		};
+		4114F06F23513A1700DF955F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4114F07023513A1700DF955F /* Constraints.swift */,
+				4114F07123513A1700DF955F /* SafeArea.swift */,
+				4114F07223513A1700DF955F /* .gitkeep */,
+				4114F07323513A1700DF955F /* BaseTypes.swift */,
+				4114F07423513A1700DF955F /* Extensions.swift */,
+				4114F07523513A1700DF955F /* Shortcuts.swift */,
+				4114F07623513A1700DF955F /* AspectRatio.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4114F07723513A1700DF955F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4114F07823513A1700DF955F /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				4114F06E23513A1700DF955F /* constrain */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -162,6 +211,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4114F07B23513A1700DF955F /* .gitkeep in Resources */,
+				4114F08023513A1700DF955F /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +262,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4114F07D23513A1700DF955F /* Extensions.swift in Sources */,
+				4114F07923513A1700DF955F /* Constraints.swift in Sources */,
+				4114F07A23513A1700DF955F /* SafeArea.swift in Sources */,
+				4114F07F23513A1700DF955F /* AspectRatio.swift in Sources */,
+				4114F07C23513A1700DF955F /* BaseTypes.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				4114F07E23513A1700DF955F /* Shortcuts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
