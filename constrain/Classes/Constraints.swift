@@ -93,7 +93,7 @@ extension Constraints {
     internal func applyAnchorConstraint<T>(
         anchor1: NSLayoutAnchor<T>,
         anchor2: NSLayoutAnchor<T>,
-        identifier: ConstraintIdentifier,
+        identifiers: Set<ConstraintIdentifier>,
         constant: CGFloat,
         relationship: Relationship = .equal,
         priority: UILayoutPriority
@@ -105,13 +105,13 @@ extension Constraints {
         default: constraint = anchor1.constraint(equalTo: anchor2, constant: constant)
         }
         constraint.priority = priority
-        finalizeConstraint(constraint, identifier)
+        finalizeConstraint(constraint, identifiers)
         return self
     }
     
     internal func applyDimensionConstraint(
         dimension: NSLayoutDimension,
-        identifier: ConstraintIdentifier,
+        identifiers: Set<ConstraintIdentifier>,
         constant: CGFloat,
         relationship: Relationship = .equal,
         priority: UILayoutPriority
@@ -123,14 +123,14 @@ extension Constraints {
         default: constraint = dimension.constraint(equalToConstant: constant)
         }
         constraint.priority = priority
-        finalizeConstraint(constraint, identifier)
+        finalizeConstraint(constraint, identifiers)
         return self
     }
     
     internal func applyDimensionMultiplier(
         dimension1: NSLayoutDimension,
         dimension2: NSLayoutDimension,
-        identifier: ConstraintIdentifier,
+        identifiers: Set<ConstraintIdentifier>,
         constant: CGFloat,
         multiplier: CGFloat = 1,
         relationship: Relationship = .equal,
@@ -150,15 +150,17 @@ extension Constraints {
         // multiplier is immutable, so I'm just setting constant after initializing
         constraint.constant = constant
         constraint.priority = priority
-        finalizeConstraint(constraint, identifier)
+        finalizeConstraint(constraint, identifiers)
         return self
     }
     
-    fileprivate func finalizeConstraint(_ constraint: NSLayoutConstraint, _ identifier: ConstraintIdentifier) {
+    fileprivate func finalizeConstraint(_ constraint: NSLayoutConstraint, _ identifiers: Set<ConstraintIdentifier>) {
         view?.translatesAutoresizingMaskIntoConstraints = false
         constraint.isActive = true
-        constraint.identifier = viewName + identifier.string
-        constraints[identifier] = constraint // TODO: deactivate any existing before overwriting, or allow more than one of same identifier
+        constraint.identifier = viewName + identifiers.map { $0.string }.joined(separator: "+")
+        for identifier in identifiers {
+            constraints[identifier] = constraint
+        }
         latestConstraint = constraint
     }
     

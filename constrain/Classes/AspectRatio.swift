@@ -20,7 +20,7 @@ public extension Constraints {
             print("View fell out of memory.")
             return self
         }
-        return applyDimensionMultiplier(dimension1: view.widthAnchor, dimension2: view.heightAnchor, identifier: ConstraintIdentifier.aspectRatio, constant: 0, multiplier: ratio, relationship: relationship, priority: priority)
+        return applyDimensionMultiplier(dimension1: view.widthAnchor, dimension2: view.heightAnchor, identifiers: [.aspectRatio], constant: 0, multiplier: ratio, relationship: relationship, priority: priority)
     }
     
 }

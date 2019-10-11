@@ -19,7 +19,7 @@ public extension Constraints {
                 print("Attempting to create top constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.topAnchor, anchor2: anchor, identifier: .top, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.topAnchor, anchor2: anchor, identifiers: [.top], constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the bottom of the superview when no anchor is provided.
@@ -32,7 +32,7 @@ public extension Constraints {
                 print("Attempting to create bottom constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.bottomAnchor, anchor2: anchor, identifier: .bottom, constant: -constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.bottomAnchor, anchor2: anchor, identifiers: [.bottom], constant: -constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the leading edge of the superview when no anchor is provided.
@@ -45,7 +45,7 @@ public extension Constraints {
                 print("Attempting to create leading constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.leadingAnchor, anchor2: anchor, identifier: .leading, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.leadingAnchor, anchor2: anchor, identifiers: [.leading], constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the trailing edge of the superview when no anchor is provided.
@@ -58,7 +58,7 @@ public extension Constraints {
                 print("Attempting to create trailing constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.trailingAnchor, anchor2: anchor, identifier: .trailing, constant: -constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.trailingAnchor, anchor2: anchor, identifiers: [.trailing], constant: -constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the horizontal center point of the superview when no anchor is provided.
@@ -71,7 +71,7 @@ public extension Constraints {
                 print("Attempting to create centerX constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.centerXAnchor, anchor2: anchor, identifier: .centerX, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.centerXAnchor, anchor2: anchor, identifiers: [.centerX], constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the vertical center point of the superview when no anchor is provided.
@@ -84,7 +84,7 @@ public extension Constraints {
                 print("Attempting to create centerY constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.centerYAnchor, anchor2: anchor, identifier: .centerY, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.centerYAnchor, anchor2: anchor, identifiers: [.centerY], constant: constant, relationship: relationship, priority: priority)
     }
 }
 
@@ -97,7 +97,7 @@ public extension Constraints {
             print("View fell out of memory.")
             return self
         }
-        return applyDimensionConstraint(dimension: view.heightAnchor, identifier: .height, constant: constant, relationship: relationship, priority: priority)
+        return applyDimensionConstraint(dimension: view.heightAnchor, identifiers: [.height], constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrains the height of one view to the height of another
@@ -107,7 +107,7 @@ public extension Constraints {
             print("View fell out of memory.")
             return self
         }
-        return applyAnchorConstraint(anchor1: view.heightAnchor, anchor2: anchor, identifier: .height, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.heightAnchor, anchor2: anchor, identifiers: [.height], constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Apply the width constraint of a view
@@ -117,7 +117,7 @@ public extension Constraints {
             print("View fell out of memory.")
             return self
         }
-        return applyDimensionConstraint(dimension: view.widthAnchor, identifier: .width, constant: constant, relationship: relationship, priority: priority)
+        return applyDimensionConstraint(dimension: view.widthAnchor, identifiers: [.width], constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrains the width of one view to the width of another
@@ -127,7 +127,7 @@ public extension Constraints {
             print("View fell out of memory.")
             return self
         }
-        return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: anchor, identifier: .width, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: anchor, identifiers: [.width], constant: constant, relationship: relationship, priority: priority)
     }
     
 }

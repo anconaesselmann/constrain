@@ -37,7 +37,7 @@ public extension Constraints {
                 print("Attempting to create top constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.topAnchor, anchor2: anchor, identifier: .top, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.topAnchor, anchor2: anchor, identifiers: [.top], constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to the bottom safe area of the superview.
@@ -49,7 +49,7 @@ public extension Constraints {
                 print("Attempting to create bottom constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.bottomAnchor, anchor2: anchor, identifier: .bottom, constant: -constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.bottomAnchor, anchor2: anchor, identifiers: [.bottom], constant: -constant, relationship: relationship, priority: priority)
     }
     
     /// iOS 11 introduced safe area layout constraints.
