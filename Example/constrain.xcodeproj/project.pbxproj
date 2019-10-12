@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4114F07923513A1700DF955F /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07023513A1700DF955F /* Constraints.swift */; };
 		4114F07A23513A1700DF955F /* SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07123513A1700DF955F /* SafeArea.swift */; };
-		4114F07B23513A1700DF955F /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 4114F07223513A1700DF955F /* .gitkeep */; };
 		4114F07C23513A1700DF955F /* BaseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07323513A1700DF955F /* BaseTypes.swift */; };
 		4114F07D23513A1700DF955F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07423513A1700DF955F /* Extensions.swift */; };
 		4114F07E23513A1700DF955F /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114F07523513A1700DF955F /* Shortcuts.swift */; };
@@ -24,7 +23,6 @@
 		36D7A925264F22D7E7E10C59 /* Pods-constrain_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-constrain_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-constrain_Tests/Pods-constrain_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4114F07023513A1700DF955F /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		4114F07123513A1700DF955F /* SafeArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArea.swift; sourceTree = "<group>"; };
-		4114F07223513A1700DF955F /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		4114F07323513A1700DF955F /* BaseTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTypes.swift; sourceTree = "<group>"; };
 		4114F07423513A1700DF955F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4114F07523513A1700DF955F /* Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shortcuts.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			children = (
 				4114F07023513A1700DF955F /* Constraints.swift */,
 				4114F07123513A1700DF955F /* SafeArea.swift */,
-				4114F07223513A1700DF955F /* .gitkeep */,
 				4114F07323513A1700DF955F /* BaseTypes.swift */,
 				4114F07423513A1700DF955F /* Extensions.swift */,
 				4114F07523513A1700DF955F /* Shortcuts.swift */,
@@ -211,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4114F07B23513A1700DF955F /* .gitkeep in Resources */,
 				4114F08023513A1700DF955F /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
