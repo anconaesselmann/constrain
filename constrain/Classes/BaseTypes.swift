@@ -11,7 +11,7 @@ public extension Constraints {
     
     /// Constrain the view to a layout anchor or to the top of the superview when no anchor is provided.
     @discardableResult
-    func top(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func top(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.topAnchor
@@ -19,12 +19,12 @@ public extension Constraints {
                 print("Attempting to create top constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.topAnchor, anchor2: anchor, identifiers: [.top], constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.topAnchor, anchor2: anchor, identifiers: ids(.top, name: name), constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the bottom of the superview when no anchor is provided.
     @discardableResult
-    func bottom(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func bottom(to anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.bottomAnchor
@@ -32,12 +32,12 @@ public extension Constraints {
                 print("Attempting to create bottom constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.bottomAnchor, anchor2: anchor, identifiers: [.bottom], constant: -constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.bottomAnchor, anchor2: anchor, identifiers: ids(.bottom, name: name), constant: -constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the leading edge of the superview when no anchor is provided.
     @discardableResult
-    func leading(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func leading(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.leadingAnchor
@@ -45,12 +45,12 @@ public extension Constraints {
                 print("Attempting to create leading constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.leadingAnchor, anchor2: anchor, identifiers: [.leading], constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.leadingAnchor, anchor2: anchor, identifiers: ids(.leading, name: name), constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the trailing edge of the superview when no anchor is provided.
     @discardableResult
-    func trailing(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func trailing(to anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.trailingAnchor
@@ -58,12 +58,12 @@ public extension Constraints {
                 print("Attempting to create trailing constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.trailingAnchor, anchor2: anchor, identifiers: [.trailing], constant: -constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.trailingAnchor, anchor2: anchor, identifiers: ids(.trailing, name: name), constant: -constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the horizontal center point of the superview when no anchor is provided.
     @discardableResult
-    func centerX(equalTo anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func centerX(equalTo anchor: NSLayoutXAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.centerXAnchor
@@ -71,12 +71,12 @@ public extension Constraints {
                 print("Attempting to create centerX constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.centerXAnchor, anchor2: anchor, identifiers: [.centerX], constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.centerXAnchor, anchor2: anchor, identifiers: ids(.centerX, name: name), constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrain the view to a layout anchor or to the vertical center point of the superview when no anchor is provided.
     @discardableResult
-    func centerY(equalTo anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func centerY(equalTo anchor: NSLayoutYAxisAnchor? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard
             let view = view,
             let anchor = anchor ?? view.superview?.centerYAnchor
@@ -84,7 +84,7 @@ public extension Constraints {
                 print("Attempting to create centerY constraint without a reference anchor.")
                 return self
         }
-        return applyAnchorConstraint(anchor1: view.centerYAnchor, anchor2: anchor, identifiers: [.centerY], constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.centerYAnchor, anchor2: anchor, identifiers: ids(.centerY, name: name), constant: constant, relationship: relationship, priority: priority)
     }
 }
 
@@ -92,42 +92,42 @@ public extension Constraints {
 public extension Constraints {
     /// Apply the height constraint of a view
     @discardableResult
-    func height(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func height(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
         }
-        return applyDimensionConstraint(dimension: view.heightAnchor, identifiers: [.height], constant: constant, relationship: relationship, priority: priority)
+        return applyDimensionConstraint(dimension: view.heightAnchor, identifiers: ids(.height, name: name), constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrains the height of one view to the height of another
     @discardableResult
-    func height(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func height(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
         }
-        return applyAnchorConstraint(anchor1: view.heightAnchor, anchor2: anchor, identifiers: [.height], constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.heightAnchor, anchor2: anchor, identifiers: ids(.height, name: name), constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Apply the width constraint of a view
     @discardableResult
-    func width(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func width(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
         }
-        return applyDimensionConstraint(dimension: view.widthAnchor, identifiers: [.width], constant: constant, relationship: relationship, priority: priority)
+        return applyDimensionConstraint(dimension: view.widthAnchor, identifiers: ids(.width, name: name), constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Constrains the width of one view to the width of another
     @discardableResult
-    func width(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func width(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
         guard let view = view else {
             print("View fell out of memory.")
             return self
         }
-        return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: anchor, identifiers: [.width], constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: anchor, identifiers: ids(.width, name: name), constant: constant, relationship: relationship, priority: priority)
     }
     
 }
@@ -195,4 +195,12 @@ public extension Constraints {
             .width(to: view.widthAnchor, by: relationship, priority: priority)
     }
     
+}
+
+fileprivate func ids(_ id: ConstraintIdentifier, name: String?) -> Set<ConstraintIdentifier> {
+    if let name = name {
+        return [id, .named(name)]
+    } else {
+        return [id]
+    }
 }
