@@ -12,26 +12,26 @@ public extension Constraints {
     
     /// Constrain the view to a layout anchor or to the top of the superview when no anchor is provided.
     @discardableResult
-    func top(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        return top(constant: constant, by: relationship, priority: priority)
+    func top(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
+        return top(constant: constant, by: relationship, priority: priority, named: name)
     }
     
     /// Constrain the view to a layout anchor or to the bottom of the superview when no anchor is provided.
     @discardableResult
-    func bottom(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        return bottom(constant: constant, by: relationship, priority: priority)
+    func bottom(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
+        return bottom(constant: constant, by: relationship, priority: priority, named: name)
     }
     
     /// Constrain the view to the leading edge of the superview.
     @discardableResult
-    func leading(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        return leading(constant: constant, by: relationship, priority: priority)
+    func leading(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
+        return leading(constant: constant, by: relationship, priority: priority, named: name)
     }
     
     /// Constrain the view to the trailing edge of the superview.
     @discardableResult
-    func trailing(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        return trailing(constant: constant, by: relationship, priority: priority)
+    func trailing(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required, named name: String? = nil) -> Constraints {
+        return trailing(constant: constant, by: relationship, priority: priority, named: name)
     }
     
     /// Fills the width of the superview.
