@@ -161,5 +161,12 @@ extension Constraints {
         view?.layer.cornerRadius = value
         return self
     }
+
+    @discardableResult
+    public func refresh() -> Self {
+        view?.setNeedsLayout()
+        view?.layoutIfNeeded()
+        return self
+    }
     
 }
