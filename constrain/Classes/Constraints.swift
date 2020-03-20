@@ -19,6 +19,7 @@ public enum ConstraintIdentifier: String {
 
     // Not actually constraints:
     case cornerRadius = ".cornerRadius"
+    case size = ".size" // size combines .width and .height
 }
 
 public typealias Relationship = NSLayoutConstraint.Relation
@@ -150,6 +151,9 @@ extension Constraints {
         switch identifier {
         case .cornerRadius:
             cornerRadius(constant)
+        case .size:
+            setConstant(constant, forIdentifier: .width)
+            setConstant(constant, forIdentifier: .height)
         default:
             setConstant(constant, forIdentifier: identifier)
         }
