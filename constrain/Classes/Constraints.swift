@@ -140,5 +140,11 @@ extension Constraints {
     public func setConstant(_ constant: CGFloat, forIdentifier identifier: ConstraintIdentifier) {
         layoutConstraintWithIdentifier(identifier)?.constant = constant
     }
+
+    @discardableResult
+    public func cornerRadius(_ value: CGFloat) -> Self {
+        view?.layer.cornerRadius = value
+        return self
+    }
     
 }
