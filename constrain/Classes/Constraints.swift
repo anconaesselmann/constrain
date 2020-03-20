@@ -16,6 +16,9 @@ public enum ConstraintIdentifier: String {
     case centerX = ".centerX"
     case centerY = ".centerY"
     case aspectRatio = ".aspectRatio"
+
+    // Not actually constraints:
+    case cornerRadius = ".cornerRadius"
 }
 
 public typealias Relationship = NSLayoutConstraint.Relation
@@ -139,6 +142,18 @@ extension Constraints {
     /// When storing a reference to a Constraints instance this method allows to set the constant of a respective constraint.
     public func setConstant(_ constant: CGFloat, forIdentifier identifier: ConstraintIdentifier) {
         layoutConstraintWithIdentifier(identifier)?.constant = constant
+    }
+
+    @discardableResult
+    public func update(_ identifier: ConstraintIdentifier, to constant: CGFloat) -> Self {
+        // constrain wills tart to support setting and updating of view propperties that are not actually NSLayoutConstraints. We have to treat them slightly differently.
+        switch identifier {
+        case .cornerRadius:
+            cornerRadius(constant)
+        default:
+            setConstant(constant, forIdentifier: identifier)
+        }
+        return self
     }
 
     @discardableResult
