@@ -134,6 +134,9 @@ extension Constraints {
         allConstraints.append(constraint)
         latestConstraint = constraint
     }
+}
+
+extension Constraints {
     
     /// When storing a reference to a Constraints instance this method allows to retrieve a respective constraint.
     public func layoutConstraintWithIdentifier(_ identifier: ConstraintIdentifier) -> NSLayoutConstraint? {
@@ -165,13 +168,23 @@ extension Constraints {
         view?.layer.cornerRadius = value
         return self
     }
-
+    
+}
+    
+extension Constraints {
+    
     @discardableResult
     public func refresh() -> Self {
         view?.setNeedsLayout()
         view?.layoutIfNeeded()
         return self
     }
+    
+}
+
+
+// bulk activation/deactivation
+extension Constraints {
     
     @discardableResult
     public func activate() -> Self {
