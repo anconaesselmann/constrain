@@ -40,9 +40,6 @@ public class Constraints {
     private var isActive = true
     
     public var latestConstraint: NSLayoutConstraint?
-    // Not implemented yet
-    @available(*, unavailable)
-    public var latestConstraints: ConstraintSet?
     
     internal init(view: UIView, name: String? = nil) {
         self.view = view
