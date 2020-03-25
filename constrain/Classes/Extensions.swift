@@ -86,3 +86,18 @@ public extension UIView {
     }
     
 }
+
+extension UIView {
+    public func refresh() {
+        setNeedsLayout()
+        layoutIfNeeded()
+    }
+}
+
+extension Constraints {
+    @discardableResult
+    public func refresh() -> Self {
+        view?.refresh()
+        return self
+    }
+}

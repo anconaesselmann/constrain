@@ -10,6 +10,8 @@
 		198B27A5141D978703733A87FA1E773A /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED86088CE0644078A9F4AF753B842C /* Constraints.swift */; };
 		21855F66DA09648C3C8C43D4F2F7AD76 /* Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B113BAA25CAE75F9B22CAD888896AF7 /* Shortcuts.swift */; };
 		2FD742CE6CABB76E4062228B8C6BD7EF /* constrain-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB622EF60499A12E63036F7DF3DD7D90 /* constrain-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EB0E434242C014000244983 /* Modification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB0E433242C014000244983 /* Modification.swift */; };
+		4EB0E436242C01DF00244983 /* BulkOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB0E435242C01DF00244983 /* BulkOperations.swift */; };
 		7A1794CE4B93FB667A35563AEC5FAD43 /* AspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1BB772E96F3F60BD7051503878F25 /* AspectRatio.swift */; };
 		7BF251ACCDA39CD4AA2E396EF339F1B3 /* Pods-constrain_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 028E49C8D45541F4883B47C66230914B /* Pods-constrain_Tests-dummy.m */; };
 		9AEB5098CFC540C1D3CE4BC05FF16E5C /* constrain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B1A8DB7DC8A3CC0FF1F1CAB705F803 /* constrain-dummy.m */; };
@@ -42,6 +44,8 @@
 		35BC50A3EA8B30992BDF7DB6F68B1907 /* Pods-constrain_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-constrain_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3B113BAA25CAE75F9B22CAD888896AF7 /* Shortcuts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shortcuts.swift; path = constrain/Classes/Shortcuts.swift; sourceTree = "<group>"; };
 		45922825A1107BA029AFA1CC887F0AA8 /* BaseTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseTypes.swift; path = constrain/Classes/BaseTypes.swift; sourceTree = "<group>"; };
+		4EB0E433242C014000244983 /* Modification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Modification.swift; path = constrain/Classes/Modification.swift; sourceTree = "<group>"; };
+		4EB0E435242C01DF00244983 /* BulkOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BulkOperations.swift; path = constrain/Classes/BulkOperations.swift; sourceTree = "<group>"; };
 		5DACBAF6C9C1EB1EBE329E4EE0C93A9C /* SafeArea.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SafeArea.swift; path = constrain/Classes/SafeArea.swift; sourceTree = "<group>"; };
 		6FB1BB772E96F3F60BD7051503878F25 /* AspectRatio.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AspectRatio.swift; path = constrain/Classes/AspectRatio.swift; sourceTree = "<group>"; };
 		9AC39245BAE566E3EFEEF485FDB878EA /* constrain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "constrain-prefix.pch"; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				6FB1BB772E96F3F60BD7051503878F25 /* AspectRatio.swift */,
 				45922825A1107BA029AFA1CC887F0AA8 /* BaseTypes.swift */,
 				14ED86088CE0644078A9F4AF753B842C /* Constraints.swift */,
+				4EB0E433242C014000244983 /* Modification.swift */,
+				4EB0E435242C01DF00244983 /* BulkOperations.swift */,
 				A9FF33051E6BEB4735334964A2C14D25 /* Extensions.swift */,
 				5DACBAF6C9C1EB1EBE329E4EE0C93A9C /* SafeArea.swift */,
 				3B113BAA25CAE75F9B22CAD888896AF7 /* Shortcuts.swift */,
@@ -302,8 +308,10 @@
 				7A1794CE4B93FB667A35563AEC5FAD43 /* AspectRatio.swift in Sources */,
 				ADA6F99CE590ADAD4719AB72AC707DFC /* BaseTypes.swift in Sources */,
 				9AEB5098CFC540C1D3CE4BC05FF16E5C /* constrain-dummy.m in Sources */,
+				4EB0E434242C014000244983 /* Modification.swift in Sources */,
 				198B27A5141D978703733A87FA1E773A /* Constraints.swift in Sources */,
 				ED931D7D71307CE75B3E42448B67EB37 /* Extensions.swift in Sources */,
+				4EB0E436242C01DF00244983 /* BulkOperations.swift in Sources */,
 				F3DE7D5141CEEE4B7DCDF239BC490F63 /* SafeArea.swift in Sources */,
 				21855F66DA09648C3C8C43D4F2F7AD76 /* Shortcuts.swift in Sources */,
 			);
