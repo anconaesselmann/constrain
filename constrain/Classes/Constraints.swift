@@ -173,18 +173,21 @@ extension Constraints {
         return self
     }
     
+    @discardableResult
     public func activate() -> Self {
         NSLayoutConstraint.activate(allConstraints)
         isActive = true
         return self
     }
     
+    @discardableResult
     public func deactivate() -> Self {
         NSLayoutConstraint.deactivate(allConstraints)
         isActive = false
         return self
     }
     
+    @discardableResult
     public func toggle() -> Self {
         return isActive ? deactivate() : activate()
     }
