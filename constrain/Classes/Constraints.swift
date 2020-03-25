@@ -37,6 +37,7 @@ public class Constraints {
     internal var viewName: String
     private var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
     private var allConstraints: ConstraintSet = []
+    private var isActive = true
     
     public var latestConstraint: NSLayoutConstraint?
     // Not implemented yet
@@ -177,12 +178,18 @@ extension Constraints {
     
     public func activate() -> Self {
         NSLayoutConstraint.activate(allConstraints)
+        isActive = true
         return self
     }
     
     public func deactivate() -> Self {
         NSLayoutConstraint.deactivate(allConstraints)
+        isActive = false
         return self
+    }
+    
+    public func toggle() -> Self {
+        return isActive ? deactivate() : activate()
     }
     
 }
