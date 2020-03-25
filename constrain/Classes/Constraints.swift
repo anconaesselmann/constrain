@@ -36,6 +36,7 @@ public class Constraints {
     internal weak var view: UIView?
     internal var viewName: String
     private var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
+    private var allConstraints: ConstraintSet = []
     
     public var latestConstraint: NSLayoutConstraint?
     // Not implemented yet
@@ -131,7 +132,8 @@ extension Constraints {
         view?.translatesAutoresizingMaskIntoConstraints = false
         constraint.isActive = true
         constraint.identifier = viewName + identifier.rawValue
-        constraints[identifier] = constraint // TODO: deactivate any existing before overwriting, or allow more than one of same identifier
+        constraints[identifier] = constraint
+        allConstraints.append(constraint)
         latestConstraint = constraint
     }
     
