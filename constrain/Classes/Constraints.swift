@@ -147,7 +147,7 @@ extension Constraints {
 
     @discardableResult
     public func update(_ identifier: ConstraintIdentifier, to constant: CGFloat) -> Self {
-        // constrain wills tart to support setting and updating of view propperties that are not actually NSLayoutConstraints. We have to treat them slightly differently.
+        // constrain will start to support setting and updating of view propperties that are not actually NSLayoutConstraints. We have to treat them slightly differently.
         switch identifier {
         case .cornerRadius:
             cornerRadius(constant)
