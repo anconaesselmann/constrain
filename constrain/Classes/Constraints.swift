@@ -27,7 +27,7 @@ public typealias Relationship = NSLayoutConstraint.Relation
 public typealias ConstraintSet = [NSLayoutConstraint]
 
 /// Constraints is a container of layout constraints for a UIView. It has convenience methods for creating and retrieving constraints.
-/// For improved readability constraint-creation methods can be chained.
+/// For improved readability, all methods can be chained.
 /// Constraints are active on creation
 /// Most methods allow the omission of an anchor or view to be passed in.
 /// The superview is used when no view is passed in and the superview's respective anchor is used when the anchor is omitted.
