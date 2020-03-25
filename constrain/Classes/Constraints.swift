@@ -175,4 +175,14 @@ extension Constraints {
         return self
     }
     
+    public func activate() -> Self {
+        NSLayoutConstraint.activate(allConstraints)
+        return self
+    }
+    
+    public func deactivate() -> Self {
+        NSLayoutConstraint.deactivate(allConstraints)
+        return self
+    }
+    
 }
