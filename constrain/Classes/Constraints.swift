@@ -15,9 +15,9 @@ public class Constraints {
     
     internal weak var view: UIView?
     internal var viewName: String
-    private var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
-    private var allConstraints: ConstraintSet = []
-    private var isActive = true
+    internal var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
+    internal var allConstraints: ConstraintSet = []
+    internal var isActive = true
     
     public var latestConstraint: NSLayoutConstraint?
     
