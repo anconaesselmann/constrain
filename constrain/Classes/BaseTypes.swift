@@ -102,12 +102,13 @@ public extension Constraints {
     
     /// Constrains the height of one view to the height of another
     @discardableResult
-    func height(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        guard let view = view else {
-            print("View fell out of memory.")
-            return self
+    func height(to anchor: NSLayoutDimension? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+        guard let view = view,
+            let anchor2 = anchor ?? view.superview?.heightAnchor else {
+                print("Trying to create height constraint without reference anchor")
+                return self
         }
-        return applyAnchorConstraint(anchor1: view.heightAnchor, anchor2: anchor, identifier: .height, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.heightAnchor, anchor2: anchor2, identifier: .height, constant: constant, relationship: relationship, priority: priority)
     }
     
     /// Apply the width constraint of a view
@@ -122,12 +123,13 @@ public extension Constraints {
     
     /// Constrains the width of one view to the width of another
     @discardableResult
-    func width(to anchor: NSLayoutDimension, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
-        guard let view = view else {
-            print("View fell out of memory.")
-            return self
+    func width(to anchor: NSLayoutDimension? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+        guard let view = view,
+            let anchor2 = anchor ?? view.superview?.widthAnchor else {
+                print("Trying to create width constraint without reference anchor")
+                return self
         }
-        return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: anchor, identifier: .width, constant: constant, relationship: relationship, priority: priority)
+        return applyAnchorConstraint(anchor1: view.widthAnchor, anchor2: anchor2, identifier: .width, constant: constant, relationship: relationship, priority: priority)
     }
     
 }
@@ -189,10 +191,10 @@ public extension Constraints {
     
     /// Constraint the height and width of one view to those of another
     @discardableResult
-    func size(to view: UIView, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+    func size(to view: UIView? = nil, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         return self
-            .height(to: view.heightAnchor, by: relationship, priority: priority)
-            .width(to: view.widthAnchor, by: relationship, priority: priority)
+            .height(to: view?.heightAnchor, by: relationship, priority: priority)
+            .width(to: view?.widthAnchor, by: relationship, priority: priority)
     }
     
 }
