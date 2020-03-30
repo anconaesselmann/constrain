@@ -4,30 +4,10 @@
 
 import UIKit
 
-public enum ConstraintIdentifier: String {
-    case top = ".top"
-    case leading = ".leading"
-    case trailing = ".trailing"
-    case bottom = ".bottom"
-    case topSafe = ".topSafe"
-    case bottomSafe = ".bottomSafe"
-    case height = ".height"
-    case width = ".width"
-    case centerX = ".centerX"
-    case centerY = ".centerY"
-    case aspectRatio = ".aspectRatio"
-
-    // Not actually constraints:
-    case cornerRadius = ".cornerRadius"
-    case size = ".size" // size combines .width and .height
-}
-
 public typealias Relationship = NSLayoutConstraint.Relation
 
-public typealias ConstraintSet = [NSLayoutConstraint]
-
 /// Constraints is a container of layout constraints for a UIView. It has convenience methods for creating and retrieving constraints.
-/// For improved readability constraint-creation methods can be chained.
+/// For improved readability, all methods can be chained.
 /// Constraints are active on creation
 /// Most methods allow the omission of an anchor or view to be passed in.
 /// The superview is used when no view is passed in and the superview's respective anchor is used when the anchor is omitted.
@@ -35,12 +15,11 @@ public class Constraints {
     
     internal weak var view: UIView?
     internal var viewName: String
-    private var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
+    internal var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
+    internal var allConstraints: [NSLayoutConstraint] = []
+    internal var isActive = true
     
     public var latestConstraint: NSLayoutConstraint?
-    // Not implemented yet
-    @available(*, unavailable)
-    public var latestConstraints: ConstraintSet?
     
     internal init(view: UIView, name: String? = nil) {
         self.view = view
@@ -129,48 +108,10 @@ extension Constraints {
     
     fileprivate func finalizeConstraint(_ constraint: NSLayoutConstraint, _ identifier: ConstraintIdentifier) {
         view?.translatesAutoresizingMaskIntoConstraints = false
-        constraint.isActive = true
+        constraint.isActive = isActive
         constraint.identifier = viewName + identifier.rawValue
-        constraints[identifier] = constraint // TODO: deactivate any existing before overwriting, or allow more than one of same identifier
+        constraints[identifier] = constraint
+        allConstraints.append(constraint)
         latestConstraint = constraint
     }
-    
-    /// When storing a reference to a Constraints instance this method allows to retrieve a respective constraint.
-    public func layoutConstraintWithIdentifier(_ identifier: ConstraintIdentifier) -> NSLayoutConstraint? {
-        return constraints[identifier]
-    }
-    
-    /// When storing a reference to a Constraints instance this method allows to set the constant of a respective constraint.
-    public func setConstant(_ constant: CGFloat, forIdentifier identifier: ConstraintIdentifier) {
-        layoutConstraintWithIdentifier(identifier)?.constant = constant
-    }
-
-    @discardableResult
-    public func update(_ identifier: ConstraintIdentifier, to constant: CGFloat) -> Self {
-        // constrain wills tart to support setting and updating of view propperties that are not actually NSLayoutConstraints. We have to treat them slightly differently.
-        switch identifier {
-        case .cornerRadius:
-            cornerRadius(constant)
-        case .size:
-            setConstant(constant, forIdentifier: .width)
-            setConstant(constant, forIdentifier: .height)
-        default:
-            setConstant(constant, forIdentifier: identifier)
-        }
-        return self
-    }
-
-    @discardableResult
-    public func cornerRadius(_ value: CGFloat) -> Self {
-        view?.layer.cornerRadius = value
-        return self
-    }
-
-    @discardableResult
-    public func refresh() -> Self {
-        view?.setNeedsLayout()
-        view?.layoutIfNeeded()
-        return self
-    }
-    
 }

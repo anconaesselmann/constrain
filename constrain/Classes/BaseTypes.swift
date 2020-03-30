@@ -90,7 +90,7 @@ public extension Constraints {
 
 // Height and width stuff
 public extension Constraints {
-    /// Apply the height constraint of a view
+    /// Set the height constraint to a constant
     @discardableResult
     func height(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
@@ -110,7 +110,7 @@ public extension Constraints {
         return applyAnchorConstraint(anchor1: view.heightAnchor, anchor2: anchor, identifier: .height, constant: constant, relationship: relationship, priority: priority)
     }
     
-    /// Apply the width constraint of a view
+    /// Set the width constraint to a constant
     @discardableResult
     func width(_ constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
         guard let view = view else {
