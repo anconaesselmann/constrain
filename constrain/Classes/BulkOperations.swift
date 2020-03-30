@@ -7,8 +7,6 @@
 
 import Foundation
 
-public typealias ConstraintSet = [NSLayoutConstraint]
-
 // bulk activation/deactivation
 public extension Constraints {
     
