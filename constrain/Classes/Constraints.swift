@@ -108,7 +108,7 @@ extension Constraints {
     
     fileprivate func finalizeConstraint(_ constraint: NSLayoutConstraint, _ identifier: ConstraintIdentifier) {
         view?.translatesAutoresizingMaskIntoConstraints = false
-        constraint.isActive = true
+        constraint.isActive = isActive
         constraint.identifier = viewName + identifier.rawValue
         constraints[identifier] = constraint
         allConstraints.append(constraint)
