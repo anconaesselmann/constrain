@@ -30,7 +30,7 @@ public extension Constraints {
     }
     
     @discardableResult
-    func clearSet() -> Self {
+    func clearSaved() -> Self {
         deactivate() // this also removes them from the view
         allConstraints = []
         constraints = [:]
