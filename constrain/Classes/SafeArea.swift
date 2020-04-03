@@ -24,6 +24,22 @@ public extension UIView {
             return bottomAnchor
         }
     }
+    
+    var centerXAnchorSafe: NSLayoutXAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide.centerXAnchor
+        } else {
+            return centerXAnchor
+        }
+    }
+    
+    var centerYAnchorSafe: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide.centerYAnchor
+        } else {
+            return centerYAnchor
+        }
+    }
 }
 
 public extension Constraints {
@@ -72,5 +88,43 @@ public extension Constraints {
         return self
             .fillWidth(of: view, constant: constant)
             .fillHeightSafely(of: view, constant: constant)
+    }
+    
+    /// Constrain the view to the center of a view or to that of the superview when no view is provided.
+    @discardableResult
+    func centerSafely(in view: UIView? = nil, constant: CGFloat = 0.0) -> Constraints {
+        guard let viewToFill = view ?? self.view?.superview else {
+            print("Attempting to center view without reference view or superview.")
+            return self
+        }
+        return self
+            .centerX(equalTo: viewToFill.centerXAnchorSafe, constant: constant)
+            .centerY(equalTo: viewToFill.centerYAnchorSafe, constant: constant)
+    }
+    
+    /// Constrain the view to a layout anchor or to the horizontal center point of the superview when no anchor is provided.
+    @discardableResult
+    func centerXSafely(in view2: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+        guard
+            let view = view,
+            let anchor = view2?.centerXAnchorSafe ?? view.superview?.centerXAnchor
+            else {
+                print("Attempting to create centerX constraint without a reference anchor.")
+                return self
+        }
+        return applyAnchorConstraint(anchor1: view.centerXAnchor, anchor2: anchor, identifier: .centerX, constant: constant, relationship: relationship, priority: priority)
+    }
+    
+    /// Constrain the view to a layout anchor or to the vertical center point of the superview when no anchor is provided.
+    @discardableResult
+    func centerYSafely(in view2: UIView? = nil, constant: CGFloat = 0.0, by relationship: Relationship = .equal, priority: UILayoutPriority = .required) -> Constraints {
+        guard
+            let view = view,
+            let anchor = view2?.centerYAnchorSafe ?? view.superview?.centerYAnchorSafe
+            else {
+                print("Attempting to create centerY constraint without a reference anchor.")
+                return self
+        }
+        return applyAnchorConstraint(anchor1: view.centerYAnchor, anchor2: anchor, identifier: .centerY, constant: constant, relationship: relationship, priority: priority)
     }
 }
