@@ -30,6 +30,17 @@ extension Constraints {
         return constraints[identifier]
     }
     
+    @discardableResult
+    public func removeConstraintWithIdentifier(_ identifier: ConstraintIdentifier) -> Self {
+        guard let constraint = layoutConstraintWithIdentifier(identifier) else { return self }
+        view?.removeConstraint(constraint)
+        constraints[identifier] = nil
+        if let index = allConstraints.firstIndex(of: constraint) {
+            allConstraints.remove(at: index)
+        }
+        return self
+    }
+        
     /// When storing a reference to a Constraints instance this method allows to set the constant of a respective constraint.
     public func setConstant(_ constant: CGFloat, forIdentifier identifier: ConstraintIdentifier) {
         layoutConstraintWithIdentifier(identifier)?.constant = constant
