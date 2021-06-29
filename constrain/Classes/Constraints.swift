@@ -14,7 +14,7 @@ public typealias Relationship = NSLayoutConstraint.Relation
 public class Constraints {
     
     internal weak var view: UIView?
-    internal var viewName: String
+    private var viewName: String?
     internal var constraints: [ConstraintIdentifier: NSLayoutConstraint] = [:]
     internal var allConstraints: [NSLayoutConstraint] = []
     internal var isActive = true
@@ -23,7 +23,15 @@ public class Constraints {
     
     internal init(view: UIView, name: String? = nil) {
         self.view = view
-        self.viewName = name ?? String.init(describing: view.self)
+        self.viewName = name
+    }
+    
+    func identifier(for `case`: ConstraintIdentifier) -> String {
+        if let viewName = viewName {
+            return viewName + "." + `case`.rawValue
+        } else {
+            return `case`.rawValue
+        }
     }
     
 }
@@ -109,7 +117,7 @@ extension Constraints {
     fileprivate func finalizeConstraint(_ constraint: NSLayoutConstraint, _ identifier: ConstraintIdentifier) {
         view?.translatesAutoresizingMaskIntoConstraints = false
         constraint.isActive = isActive
-        constraint.identifier = viewName + identifier.rawValue
+        constraint.identifier = self.identifier(for: identifier)
         constraints[identifier] = constraint
         allConstraints.append(constraint)
         latestConstraint = constraint
